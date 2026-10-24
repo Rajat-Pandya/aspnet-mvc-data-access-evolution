@@ -55,13 +55,9 @@ EmployeeDesignation
 )
 VALUES
 (
--- EmployeeID - int
-N'',
--- EmployeeName - nvarchar
-N'',
--- EmployeeGender - nvarchar
-N''
--- EmployeeDesignation - nvarchar
+@EmployeeName,
+@EmployeeGender,
+@EmployeeDesignation
 )
 END
 GO
