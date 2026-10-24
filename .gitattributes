@@ -1,0 +1,17 @@
+# Third-party front-end libraries
+**/Scripts/** linguist-vendored
+**/Content/** linguist-vendored
+**/wwwroot/lib/** linguist-vendored
+
+# EF Core Migrations
+**/Migrations/** linguist-generated
+
+# Auto-generated EF6 files (Model1.Designer.cs, *.Context.cs, *.tt-generated .cs files)
+**/Model1.Designer.cs linguist-generated
+*.Context.cs linguist-generated
+**/*.Context.cs linguist-generated
+**/Model1.cs linguist-generated
+**/spGetAllEmployees_Result.cs linguist-generated
+**/tblStudent.cs linguist-generated
+"MVC CRUD Operations Using Entity Framework/Emp.cs" linguist-generated
+"MVC CRUD Operations Using Entity Framework/Employee.cs" linguist-generated
