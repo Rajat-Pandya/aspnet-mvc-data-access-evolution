@@ -32,7 +32,7 @@ flowchart TB
         P2["Project 2<br/>CRUD Operation Using ADO.NET<br/><i>Raw ADO.NET</i>"]
         P3["Project 3<br/>BusinessLayer<br/><i>Class Library (DLL)</i>"]
         P4["Project 4<br/>CRUD Using Business Layer<br/>and Scaffolding<br/><i>Layered + Scaffolding</i>"]
-        P4 -- "ProjectReference -->" P3
+        P4 -- "ProjectReference" --> P3
     end
 
     subgraph CORE["ASP.NET Core — .NET 8"]
@@ -341,7 +341,7 @@ Audit columns (`AddedDate/ModifiedDate/IPAddress`) come from inherited `BaseEnti
 ```mermaid
 flowchart LR
     subgraph Shared["Shared Assets"]
-        SQL["Solution Items/*.sql<br/>(schema + seed scripts)"]
+        SQL["database/*.sql<br/>(schema + seed scripts)"]
         SQLSVR[("SQL Server Instance")]
     end
 

@@ -1,3 +1,14 @@
+-- ============================================================================
+-- Database Script: 01_Employee_and_StoredProcedures.sql
+-- Database: ADO_CRUD_MVC
+-- Consumed by:
+--   - Project 1: MVC CRUD Operations Using Entity Framework
+--   - Project 3: BusinessLayer (Class Library)
+--   - Project 4: CRUD Operation in MVC Using Business Layer and Scaffolding
+-- Description: Creates the Employee table, inserts sample seed records, and
+--              defines stored procedures for CRUD operations.
+-- ============================================================================
+
 CREATE TABLE [dbo].[Employee] (
 [EmployeeID] INT IDENTITY (1, 1) NOT NULL,
 [EmployeeName] NVARCHAR (50) NULL,

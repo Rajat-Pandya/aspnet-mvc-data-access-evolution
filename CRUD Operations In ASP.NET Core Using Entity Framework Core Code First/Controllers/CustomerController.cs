@@ -1,7 +1,8 @@
-﻿using CRUD_Operations_In_ASP.NET_Core_Using_Entity_Framework_Core_Code_First.DbEntities;
+using CRUD_Operations_In_ASP.NET_Core_Using_Entity_Framework_Core_Code_First.DbEntities;
+using CRUD_Operations_In_ASP.NET_Core_Using_Entity_Framework_Core_Code_First.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CRUD_Operations_In_ASP.NET_Core_Using_Entity_Framework_Core_Code_First.Models
+namespace CRUD_Operations_In_ASP.NET_Core_Using_Entity_Framework_Core_Code_First.Controllers
 {
     public class CustomerController : Controller
     {
