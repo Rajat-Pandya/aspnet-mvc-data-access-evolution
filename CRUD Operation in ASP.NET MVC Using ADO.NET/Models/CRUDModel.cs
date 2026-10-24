@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -31,7 +31,8 @@ namespace CRUD_Operations_In_ASP.NET_MVC_Using_ADO.NET.Models
             using (SqlConnection con = new SqlConnection(strConString))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("Select * from tblStudent where student_id=" + intStudentID, con);
+                SqlCommand cmd = new SqlCommand("Select * from tblStudent where student_id = @student_id", con);
+                cmd.Parameters.AddWithValue("@student_id", intStudentID);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
             }
