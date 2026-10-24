@@ -1,0 +1,32 @@
+﻿@using System.Data
+@using System.Data.SqlClient
+@model System.Data.DataTable
+@{
+    ViewBag.Title = "EditView";
+}
+<html>
+<head>
+    <script type="text/javascript">
+    </script>
+</head>
+<body>
+    <form id="frmDetail" method="post" action="@Url.Action("UpdateRecord")">
+        Enter Name: <input name="txtName" value="@Model.Rows[0]["student_name"]" /><br />
+        Enter Age: <input name="txtAge" value="@Model.Rows[0]["student_age"]" /><br />
+        Select Gender:
+        @if (Model.Rows[0]["student_gender"].ToString().ToLower() == "male")
+        {
+            <input type="radio" name="gender" value="male" checked /> @Html.Raw("Male")
+            <input type="radio" name="gender" value="female" /> @Html.Raw("Female")
+        }
+        else
+        {
+            <input type="radio" name="gender" value="male"> @Html.Raw("Male")
+            <input type="radio" name="gender" value="female" checked /> @Html.Raw("Female")
+        }
+        <input type="hidden" name="hdnID" value="@Model.Rows[0]["student_id"]" /><br />
+        <input type="submit" value="Submit" name="action" />
+        <input type="submit" value="Cancel" name="action" />
+    </form>
+</body>
+</html>

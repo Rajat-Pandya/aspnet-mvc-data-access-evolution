@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CRUD_Operations_In_ASP.NET_Core_Using_Entity_Framework_Core_Code_First.Models.CustomerViewModel>
+
+@{
+    ViewData["Title"] = "Customers";
+}
+
+<h2>Customers</h2>
+
+<p>
+    <a asp-action="AddEditCustomer" class="btn btn-primary">Add Customer</a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Mobile No</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Email</td>
+                <td>@item.MobileNo</td>
+                <td>
+                    <a asp-action="AddEditCustomer" asp-route-id="@item.Id" class="btn btn-info btn-sm">Edit</a>
+                    <a asp-action="DeleteCustomer" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

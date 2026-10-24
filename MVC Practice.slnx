@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="SQLQuery1.sql" />
+    <File Path="SqlQuery_1.sql" />
+    <File Path="SqlQuery_2.sql" />
+    <File Path="SqlQuery_3.sql" />
+  </Folder>
+  <Project Path="ASP.NET Core Web App MVC/ASP.NET Core Web App MVC.csproj" Id="9e1c8608-eb53-4351-ac49-4c6fa2bdc9f6" />
+  <Project Path="BusinessLayer/BusinessLayer.csproj" Id="75c455c4-3403-4271-9b6d-9a11504b5bc3" />
+  <Project Path="CRUD Operation in ASP.NET MVC Using ADO.NET/CRUD Operation in ASP.NET MVC Using ADO.NET.csproj" Id="1d2f2b38-1e90-4ef9-9480-81140d83d930" />
+  <Project Path="CRUD Operations In ASP.NET Core Using Entity Framework Core Code First/CRUD Operations In ASP.NET Core Using Entity Framework Core Code First.csproj" Id="40435558-2d89-431f-a452-3caf2d921fd9" />
+  <Project Path="CRUD Opertation in MVC Using Business Layer and Scaffolding/CRUD Opertation in MVC Using Business Layer and Scaffolding.csproj" Id="a7ce7bd3-c5cf-4477-ae2e-cbea153abe91" />
+  <Project Path="MVC CRUD Operations Using Entity Framework/MVC CRUD Operations Using Entity Framework.csproj" Id="31bd9366-f824-4fbb-92b0-16e74ce13efc" />
+</Solution>

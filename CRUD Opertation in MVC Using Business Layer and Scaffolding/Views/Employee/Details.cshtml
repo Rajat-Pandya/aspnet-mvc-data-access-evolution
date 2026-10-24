@@ -1,0 +1,33 @@
+﻿@model BusinessLayer.Employee
+@{
+    ViewBag.Title = "Details";
+}
+<h2>Details</h2>
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeGender)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeGender)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeDesignation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeDesignation)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

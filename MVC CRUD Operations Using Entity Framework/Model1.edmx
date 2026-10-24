@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ADO_CRUD_MVCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Emp">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Name="EmployeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmailID" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EmployeeGender" Type="nvarchar" MaxLength="10" />
+          <Property Name="EmployeeDesignation" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblStudent">
+          <Key>
+            <PropertyRef Name="student_id" />
+          </Key>
+          <Property Name="student_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="student_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="student_age" Type="int" Nullable="false" />
+          <Property Name="student_gender" Type="varchar" MaxLength="6" Nullable="false" />
+        </EntityType>
+        <Function Name="spDeleteEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EmployeeID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spGetAllEmployees" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spInsertEmployeeDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EmployeeName" Type="nvarchar" Mode="In" />
+          <Parameter Name="EmployeeGender" Type="nvarchar" Mode="In" />
+          <Parameter Name="EmployeeDesignation" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spUpdateEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EmployeeID" Type="int" Mode="In" />
+          <Parameter Name="EmployeeName" Type="nvarchar" Mode="In" />
+          <Parameter Name="EmployeeGender" Type="nvarchar" Mode="In" />
+          <Parameter Name="EmployeeDesignation" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="ADO_CRUD_MVCModelStoreContainer">
+          <EntitySet Name="Emp" EntityType="Self.Emp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblStudent" EntityType="Self.tblStudent" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ADO_CRUD_MVCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Emp">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeGender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeDesignation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblStudent">
+          <Key>
+            <PropertyRef Name="student_id" />
+          </Key>
+          <Property Name="student_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="student_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="student_age" Type="Int32" Nullable="false" />
+          <Property Name="student_gender" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ADO_CRUD_MVCEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Emps" EntityType="Self.Emp" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="tblStudents" EntityType="Self.tblStudent" />
+          <FunctionImport Name="spDeleteEmployee">
+            <Parameter Name="EmployeeID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spGetAllEmployees" ReturnType="Collection(ADO_CRUD_MVCModel.spGetAllEmployees_Result)" />
+          <FunctionImport Name="spInsertEmployeeDetails">
+            <Parameter Name="EmployeeName" Mode="In" Type="String" />
+            <Parameter Name="EmployeeGender" Mode="In" Type="String" />
+            <Parameter Name="EmployeeDesignation" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spUpdateEmployee">
+            <Parameter Name="EmployeeID" Mode="In" Type="Int32" />
+            <Parameter Name="EmployeeName" Mode="In" Type="String" />
+            <Parameter Name="EmployeeGender" Mode="In" Type="String" />
+            <Parameter Name="EmployeeDesignation" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="spGetAllEmployees_Result">
+          <Property Type="Int32" Name="EmployeeID" Nullable="false" />
+          <Property Type="String" Name="EmployeeName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EmployeeGender" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="EmployeeDesignation" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ADO_CRUD_MVCModelStoreContainer" CdmEntityContainer="ADO_CRUD_MVCEntities1">
+          <EntitySetMapping Name="Emps">
+            <EntityTypeMapping TypeName="ADO_CRUD_MVCModel.Emp">
+              <MappingFragment StoreEntitySet="Emp">
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="ADO_CRUD_MVCModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="EmployeeGender" ColumnName="EmployeeGender" />
+                <ScalarProperty Name="EmployeeDesignation" ColumnName="EmployeeDesignation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblStudents">
+            <EntityTypeMapping TypeName="ADO_CRUD_MVCModel.tblStudent">
+              <MappingFragment StoreEntitySet="tblStudent">
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="student_name" ColumnName="student_name" />
+                <ScalarProperty Name="student_age" ColumnName="student_age" />
+                <ScalarProperty Name="student_gender" ColumnName="student_gender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spDeleteEmployee" FunctionName="ADO_CRUD_MVCModel.Store.spDeleteEmployee" />
+          <FunctionImportMapping FunctionImportName="spGetAllEmployees" FunctionName="ADO_CRUD_MVCModel.Store.spGetAllEmployees">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ADO_CRUD_MVCModel.spGetAllEmployees_Result">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="EmployeeGender" ColumnName="EmployeeGender" />
+                <ScalarProperty Name="EmployeeDesignation" ColumnName="EmployeeDesignation" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spInsertEmployeeDetails" FunctionName="ADO_CRUD_MVCModel.Store.spInsertEmployeeDetails" />
+          <FunctionImportMapping FunctionImportName="spUpdateEmployee" FunctionName="ADO_CRUD_MVCModel.Store.spUpdateEmployee" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

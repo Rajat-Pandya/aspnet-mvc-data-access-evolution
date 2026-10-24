@@ -1,0 +1,39 @@
+﻿@model CRUD_Operations_In_ASP.NET_Core_Using_Entity_Framework_Core_Code_First.Models.CustomerViewModel
+
+@{
+    ViewData["Title"] = Model.Id == 0 ? "Add Customer" : "Edit Customer";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="AddEditCustomer" asp-route-id="@(Model.Id == 0 ? null : Model.Id)" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="FirstName" class="form-label"></label>
+        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="LastName" class="form-label"></label>
+        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="MobileNo" class="form-label"></label>
+        <input asp-for="MobileNo" class="form-control" />
+        <span asp-validation-for="MobileNo" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

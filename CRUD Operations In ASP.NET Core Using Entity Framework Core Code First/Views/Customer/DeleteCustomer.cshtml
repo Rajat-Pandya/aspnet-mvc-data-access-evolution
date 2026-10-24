@@ -1,0 +1,14 @@
+﻿@model CRUD_Operations_In_ASP.NET_Core_Using_Entity_Framework_Core_Code_First.Models.CustomerViewModel
+
+@{
+    ViewData["Title"] = "Delete Customer";
+}
+
+<h2>Delete Customer</h2>
+
+<p>Are you sure you want to delete <strong>@Model.Name</strong>?</p>
+
+<form asp-action="DeleteCustomer" asp-route-id="@Model.Id" method="post">
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
