@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -9,10 +10,11 @@ namespace CRUD_Operations_In_ASP.NET_MVC_Using_ADO.NET.Models
 {
     public class CRUDModel
     {
+        private readonly string strConString = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+
         public DataTable GetAllStudents()
         {
             DataTable dt = new DataTable();
-            string strConString = @"Data Source=RAJAT\SQLEXPRESS06;Initial Catalog=ADO_CRUD_MVC;Integrated Security=True";
             using (SqlConnection con = new SqlConnection(strConString))
             {
                 con.Open();
@@ -27,7 +29,6 @@ namespace CRUD_Operations_In_ASP.NET_MVC_Using_ADO.NET.Models
         public DataTable GetStudentByID(int intStudentID)
         {
             DataTable dt = new DataTable();
-            string strConString = @"Data Source=RAJAT\SQLEXPRESS06;Initial Catalog=ADO_CRUD_MVC;Integrated Security=True";
             using (SqlConnection con = new SqlConnection(strConString))
             {
                 con.Open();
@@ -42,7 +43,6 @@ namespace CRUD_Operations_In_ASP.NET_MVC_Using_ADO.NET.Models
         
         public int UpdateStudent(int intStudentID, string strStudentName, string strGender, int intAge)
         {
-            string strConString = @"Data Source=RAJAT\SQLEXPRESS06;Initial Catalog=ADO_CRUD_MVC;Integrated Security=True";
             using (SqlConnection con = new SqlConnection(strConString))
             {
                 con.Open();
@@ -59,7 +59,6 @@ namespace CRUD_Operations_In_ASP.NET_MVC_Using_ADO.NET.Models
         
         public int InsertStudent(string strStudentName, string strGender, int intAge)
         {
-            string strConString = @"Data Source=RAJAT\SQLEXPRESS06;Initial Catalog=ADO_CRUD_MVC;Integrated Security=True";
             using (SqlConnection con = new SqlConnection(strConString))
             {
                 con.Open();
@@ -75,7 +74,6 @@ namespace CRUD_Operations_In_ASP.NET_MVC_Using_ADO.NET.Models
         
         public int DeleteStudent(int intStudentID)
         {
-            string strConString = @"Data Source=RAJAT\SQLEXPRESS06;Initial Catalog=ADO_CRUD_MVC;Integrated Security=True";
             using (SqlConnection con = new SqlConnection(strConString))
             {
                 con.Open();
