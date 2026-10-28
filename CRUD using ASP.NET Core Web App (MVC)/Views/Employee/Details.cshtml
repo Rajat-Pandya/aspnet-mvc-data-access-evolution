@@ -1,0 +1,28 @@
+﻿@model CRUD_using_ASP.NET_Core_Web_App__MVC_.Models.Employees
+
+@{
+    ViewData["Title"] = "Employee Details";
+}
+
+<h2>Employee Details</h2>
+<hr />
+
+<div class="card col-md-6 p-3">
+    <dl class="row">
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.EmployeeID)</dt>
+        <dd class="col-sm-8">@Model.EmployeeID</dd>
+
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.EmployeeName)</dt>
+        <dd class="col-sm-8">@Model.EmployeeName</dd>
+
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Department)</dt>
+        <dd class="col-sm-8">@Model.Department</dd>
+
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Salary)</dt>
+        <dd class="col-sm-8">@Model.Salary.ToString("C")</dd>
+    </dl>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.EmployeeID" class="btn btn-warning">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>

@@ -10,7 +10,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Register the product service
-builder.Services.AddScoped<IProductService, DbProductService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 // builder.Services.AddScoped<IProductService, DbProductService>(); // SQL Server
 
 

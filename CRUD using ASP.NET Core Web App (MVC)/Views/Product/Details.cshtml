@@ -1,0 +1,28 @@
+﻿@model CRUD_using_ASP.NET_Core_Web_App__MVC_.Models.Products
+
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<h2>Product Details</h2>
+<hr />
+
+<div class="card col-md-6 p-3">
+    <dl class="row">
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.ProductID)</dt>
+        <dd class="col-sm-8">@Model.ProductID</dd>
+
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.ProductName)</dt>
+        <dd class="col-sm-8">@Model.ProductName</dd>
+
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Price)</dt>
+        <dd class="col-sm-8">@Model.Price.ToString("C")</dd>
+
+        <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Quantity)</dt>
+        <dd class="col-sm-8">@Model.Quantity</dd>
+    </dl>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.ProductID" class="btn btn-warning">Edit</a>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
